@@ -75,3 +75,16 @@ Run `flutter packages pub run build_runner build`构建`mobx`，成功以后启�
 Run `flutter packages pub run build_runner watch`，在你修改了`store`以后会自动刷新。
 
 ## `Mobx`踩坑
+
+
+### 解决正式版发布不能联网问题
+
+修改`android/app/src/main/AndroidManifest.xml`,新增以下权限
+
+```bash
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.INTERNET"/>
+```
